@@ -13,15 +13,16 @@ As other idle games, gameplay is very straight forward: Click on the big dice an
 * Currency counter.
 * Currency floating on click effect.
 * Currency update when clicking.
-* Purchase Plates.
+* **Purchase Plates.**
 * Clickable Plates.
 * Cost Multiplier Logic.
 * Make plates generate currency.
 * Upgrades/Boosters, a.k.a. Store.
-* Icons.
+* **Icons.**
 * Progress kept through page refreshing.
 * Finish Styling.
-* Heroku Push.
+* **Heroku Push.**
+* Update tab title with curent currency value.
 * Ascend Mechanic.
 * Achievements.
 * Screen Fill Effect.
