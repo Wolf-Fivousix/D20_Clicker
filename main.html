@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>D20 Clicker</title>
+    <script src="Skill.js"></script>
+    <script src="Sword.js"></script>
+    <script src="Game.js"></script>
+    <script src="game_logic.js"></script>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="splash_page.css">
+</head>
+
+<body>
+    <h1 class="title">D20 Clicker</h1>
+    <div class="splash">
+        <div class="diceBar">
+            <h1 id="currencyCounter"></h1>
+            <h3 id="currencyPerSecond"> 0 /second</h3>
+            <figure id="D20" onclick="D20Clicker()">
+                D20
+            </figure>
+        </div>
+        <div class="purchasePlatesArea">
+            <figure
+                onclick="levelUp('sword')"
+                id="sword"
+                class="purchasePlate">
+                    <div>
+                        <p>Sword</p>
+                        <p id="swordCost" class="cost"></p>
+                    </div>
+                    <p id="swordLevel" class="plateLevel"></p>
+            </figure>
+            <figure onclick="levelUp('shield')" id="shield" class="purchasePlate">
+                <div>
+                    <p>Shield</p>
+                    <p id="shieldCost" class="cost"></p>
+                </div>
+                <p id="shieldLevel" class="plateLevel"></p>
+            </figure>
+            <figure onclick="levelUp('fireBall')" id="fireBall" class="purchasePlate">
+                <div>
+                    <p>Fire Ball</p>
+                    <p id="fireBallCost" class="cost"></p>
+                </div>
+                <p id="fireBallLevel" class="plateLevel"></p>
+            </figure>
+        </div>
+    </div>
+    <button class="storageButton" onclick="saveGame()">Save</button>
+    <button class="storageButton loadButton" onclick="deleteSave()">Delete</button>
+</body>
+
+</html>
