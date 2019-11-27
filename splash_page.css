@@ -1,0 +1,100 @@
+.splash {
+    display: flex;
+}
+
+.title {
+    font-weight: 900;
+    font-size: 80px;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+#D20 {
+    border: 2px solid white;
+    border-radius: 60px;
+    text-align: center;
+    padding: 100px;
+    margin: 40px;
+    background-image: url("/Users/appacademy/Downloads/D20_Clicker/assets/d20TransparentTry.png");
+}
+
+#D20:hover {
+    cursor: pointer;
+}
+
+#D20:active {
+    background: gray;
+}
+
+.diceBar {
+    display: flex;
+    flex-flow: column;
+}
+
+#currencyCounter {
+    margin: 20px;
+    text-align: center;
+    font-weight: 500;
+    font-size: 24px;
+}
+#currencyPerSecond {
+    text-align: center;
+    font-weight: 100;
+    color: gray;
+}
+
+.purchasePlate {
+    border: 1px solid white;
+    padding: 20px;
+    width: 150px;
+    margin: 20px;
+    margin-left: 100px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.purchasePlate:hover {
+    cursor: pointer;
+}
+
+.plateLevel {
+    color: skyblue;
+}
+
+.cost {
+    color: green;
+}
+
+.storageButton {
+    background: #005a96;
+    padding: 10px;
+    width: 100px;
+    border: 1px solid black;
+    border-radius: 5px;
+    text-align: center;
+    margin-left: 30px;
+}
+
+.storageButton:hover {
+    cursor: pointer;
+    background: #003f69;
+}
+
+.storageButton:active {
+    transform: translateY(2px);
+}
+
+/* .loadButton {
+    background: #00702f;
+}
+
+.loadButton:hover {
+    background: #00502f;
+} */
+.loadButton {
+    background: #9c1300;
+}
+
+.loadButton:hover {
+    background: #611b00;
+}
