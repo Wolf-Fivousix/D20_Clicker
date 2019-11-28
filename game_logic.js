@@ -34,6 +34,16 @@ function loadGame() {
     return null;
 }
 
+function formatNumber(number) {
+    let formated = [];
+    number = String(number).split("").reverse();
+    while (number.length > 0) {
+        if(formated.length % 4 === 3) formated.unshift(".");
+        formated.unshift(number.shift());
+    }
+    return formated.join("");
+}
+
 document.addEventListener("DOMContentLoaded", () => {
     // Initialize HTML with Game State.
     document.getElementById("currencyCounter").innerHTML = game.currency;
@@ -45,11 +55,14 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("fireBallCost").innerHTML = game.fireBall.cost;
         
     setInterval(() => {
-        game.changeCurrency(game.sword.level / 10);
-        game.changeCurrency(game.shield.level / 10);
-        game.changeCurrency(game.fireBall.level / 10);
-        const generation = game.sword.level + game.shield.level + game.fireBall.level;
-        document.getElementById("currencyPerSecond").innerHTML = generation + " /second";
+        const swordTick = game.sword.level / 10;
+        const shieldTick = game.shield.level / 2;
+        const fireBallTick = game.fireBall.level * 4;
+        game.changeCurrency(swordTick);
+        game.changeCurrency(shieldTick);
+        game.changeCurrency(fireBallTick);
+        const generation = (swordTick + shieldTick + fireBallTick) * 10;
+        document.getElementById("currencyPerSecond").innerHTML = formatNumber(generation) + " / second";
     }, 100);
 
     
