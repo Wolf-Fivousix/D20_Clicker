@@ -14,12 +14,18 @@ class Game {
 
     changeCurrency(increment) {
         this.currency += increment;
-        document.getElementById("currencyCounter").innerHTML = this.currency.toFixed(0);
+        document.getElementById("currencyCounter").innerHTML = formatNumber(this.currency.toFixed(0));
         return this.currency;
     }
 
+
     saveObject() {
-        return [this.currency, this.sword.level];
+        return [
+                this.currency,
+                this.sword.level,
+                this.shield.level,
+                this.fireBall.level
+            ];
     }
 };
 
