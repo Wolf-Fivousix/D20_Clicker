@@ -1,5 +1,6 @@
 .splash {
     display: flex;
+    justify-content: center;
 }
 
 .title {
@@ -10,12 +11,16 @@
 }
 
 #D20 {
-    border: 2px solid white;
     border-radius: 60px;
     text-align: center;
     padding: 100px;
     margin: 40px;
     background-image: url("/Users/appacademy/Downloads/D20_Clicker/assets/d20TransparentTry.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    color: black;
+    font-size: 45px;
+    font-weight: 600;
 }
 
 #D20:hover {
@@ -72,7 +77,7 @@
     border: 1px solid black;
     border-radius: 5px;
     text-align: center;
-    margin-left: 30px;
+    margin-right: 30px;
 }
 
 .storageButton:hover {
@@ -93,8 +98,14 @@
 } */
 .loadButton {
     background: #9c1300;
+    position: absolute;
+    right: 0;
 }
 
 .loadButton:hover {
     background: #611b00;
+}
+
+svg:hover {
+    fill: red;
 }
