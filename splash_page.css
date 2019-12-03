@@ -15,7 +15,7 @@
     text-align: center;
     padding: 100px;
     margin: 40px;
-    background-image: url("/assets/d20TransparentTry.png");
+    background-image: url("./assets/d20TransparentTry.png");
     background-repeat: no-repeat;
     background-size: contain;
     color: black;
@@ -106,6 +106,10 @@
     background: #611b00;
 }
 
-svg:hover {
-    fill: red;
+.purchasePlate:hover svg {
+    fill: skyblue;
+}
+
+.dragonTest {
+    fill: white;
 }

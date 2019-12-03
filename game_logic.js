@@ -47,21 +47,21 @@ function formatNumber(number) {
 document.addEventListener("DOMContentLoaded", () => {
     // Initialize HTML with Game State.
     document.getElementById("currencyCounter").innerHTML = game.currency;
-    document.getElementById("swordLevel").innerHTML = game.sword.level;
-    document.getElementById("swordCost").innerHTML = game.sword.cost;
-    document.getElementById("shieldLevel").innerHTML = game.shield.level;
-    document.getElementById("shieldCost").innerHTML = game.shield.cost;
-    document.getElementById("fireBallLevel").innerHTML = game.fireBall.level;
-    document.getElementById("fireBallCost").innerHTML = game.fireBall.cost;
+    document.getElementById("warriorLevel").innerHTML = game.warrior.level;
+    document.getElementById("warriorCost").innerHTML = game.warrior.cost;
+    document.getElementById("arcanistLevel").innerHTML = game.arcanist.level;
+    document.getElementById("arcanistCost").innerHTML = game.arcanist.cost;
+    document.getElementById("dragonLevel").innerHTML = game.dragon.level;
+    document.getElementById("dragonCost").innerHTML = game.dragon.cost;
         
     setInterval(() => {
-        const swordTick = game.sword.level / 10;
-        const shieldTick = game.shield.level / 2;
-        const fireBallTick = game.fireBall.level * 4;
-        game.changeCurrency(swordTick);
-        game.changeCurrency(shieldTick);
-        game.changeCurrency(fireBallTick);
-        const generation = (swordTick + shieldTick + fireBallTick) * 10;
+        const warriorTick = game.warrior.level / 10;
+        const arcanistTick = game.arcanist.level / 2;
+        const dragonTick = game.dragon.level * 4;
+        game.changeCurrency(warriorTick);
+        game.changeCurrency(arcanistTick);
+        game.changeCurrency(dragonTick);
+        const generation = (warriorTick + arcanistTick + dragonTick) * 10;
         document.getElementById("currencyPerSecond").innerHTML = formatNumber(generation) + " / second";
     }, 100);
 
