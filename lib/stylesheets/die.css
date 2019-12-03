@@ -1,0 +1,20 @@
+#D20 {
+    border-radius: 60px;
+    text-align: center;
+    padding: 100px;
+    margin: 40px;
+    background-image: url("../../assets/d20TransparentTry.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    color: black;
+    font-size: 45px;
+    font-weight: 600;
+}
+
+#D20:hover {
+    cursor: pointer;
+}
+
+#D20:active {
+    background: gray;
+}
