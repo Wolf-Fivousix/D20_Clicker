@@ -12,9 +12,7 @@ As other idle games, gameplay is very straight forward: Click on the big dice an
 
 ## Technical implementation details with code snippets (make sure it looks good).
 1) Saving/Loading the game through Storage.
-2) Inactive tab's breaking the "setInterval" game loop.
-   After 1~2h the game is open the browser starts to slug. using
-setInterval is not working after all.
+2) Inactive tab's breaking the "setInterval" game loop. Modified to use time difference between updates.
 
 ## To-dos/future features.
 * Upgrades/Boosters, a.k.a. Store.
