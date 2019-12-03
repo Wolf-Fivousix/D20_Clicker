@@ -1,0 +1,29 @@
+.purchasePlate {
+    border: 1px solid white;
+    padding: 20px;
+    width: 150px;
+    margin: 20px;
+    margin-left: 100px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.purchasePlate:hover {
+    cursor: pointer;
+}
+
+.plateLevel {
+    color: skyblue;
+}
+
+.cost {
+    color: green;
+}
+
+.purchasePlate:hover svg {
+    fill: skyblue;
+}
+
+.dragonTest {
+    fill: white;
+}
