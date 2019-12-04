@@ -24,6 +24,17 @@
     fill: skyblue;
 }
 
-.dragonTest {
+svg {
     fill: white;
+    width: 24px;
+    height: 24px;
+}
+
+.dragonIcon {
+    width: 32px;
+    height: 32px;
+}
+
+.dragonIconContour {
+    fill: black;
 }
