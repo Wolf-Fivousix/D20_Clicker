@@ -9,7 +9,7 @@ function D20Clicker() {
 }
 
 function levelUp(attribute) {
-    if(game[attribute].cost < game.currency) {
+    if(game[attribute].cost <= game.currency) {
         game.changeCurrency(-game[attribute].cost);
         game[attribute].levelUp();
         document.getElementById(attribute + "Level").innerHTML = game[attribute].level;
@@ -47,6 +47,8 @@ function formatNumber(number) {
 document.addEventListener("DOMContentLoaded", () => {
     // Initialize HTML with Game State.
     document.getElementById("currencyCounter").innerHTML = game.currency;
+    document.getElementById("dieLevel").innerHTML = game.die.level;
+    document.getElementById("dieCost").innerHTML = game.die.cost;
     document.getElementById("warriorLevel").innerHTML = game.warrior.level;
     document.getElementById("warriorCost").innerHTML = game.warrior.cost;
     document.getElementById("arcanistLevel").innerHTML = game.arcanist.level;
