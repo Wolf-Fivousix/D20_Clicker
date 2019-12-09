@@ -18,3 +18,62 @@
 #D20:active {
     background: gray;
 }
+
+.dieContainer {
+    perspective: 800px;
+    perspective-origin: 50% 100px;
+}
+
+.die {
+    position: relative;
+    width: 200px;
+    transform-style: preserve-3d;
+    animation: spin 4s infinite;
+}
+
+@keyframes spin {
+    100% {
+        transform: rotateY(360deg);
+    }
+}
+
+.side {
+    background: skyblue;
+    border: 4px solid gray;
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    opacity: 50%;
+}
+
+.one {
+    transform: translateZ(100px);
+}
+
+.two {
+    transform: rotateY(270deg)
+                translateX(-100px);
+    transform-origin: center left;
+}
+
+.three {
+    transform: rotateX(90deg)
+                translateY(100px);
+	transform-origin: bottom center;
+}
+
+.four {
+    transform: rotateX(-90deg)
+                translateY(-100px);
+    transform-origin: top center;
+}
+
+.five {
+    transform: rotateY(-270deg)
+                translateX(100px);
+    transform-origin: top right;
+}
+.six {
+    transform: translateZ(-100px)
+                rotateY(180deg);
+}
