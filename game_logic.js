@@ -26,7 +26,7 @@ function D20Clicker() {
 
     d20DisplayTimer = setTimeout(() => {
         document.getElementById("D20").innerHTML = roll;
-        setTimeout(() => die.classList.add("spinIdle"), 500);
+        die.classList.add("spinIdle");
     }, 2000);
 }
 

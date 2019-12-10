@@ -9,6 +9,7 @@
 
 .spinIdle:hover {
     animation: idleSpin 120s infinite linear;
+    animation-delay: 0.5s;
 }
 
 .icosahedron:hover .d20Side{
