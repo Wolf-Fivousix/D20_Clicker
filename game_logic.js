@@ -6,7 +6,7 @@ function D20Clicker() {
     die.animate(
         [
             { transform: "rotateX(0deg) rotateY(0deg) rotateZ(0deg)" },
-            { transform: "rotateX(720deg) rotateY(360deg) rotateZ(540deg)" }
+            { transform: "rotateX(720deg) rotateY(360deg) rotateZ(360deg)" }
         ],
         {
             duration: 2000,
