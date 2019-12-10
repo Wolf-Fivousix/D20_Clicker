@@ -5,10 +5,15 @@
 
 .icosahedron:hover {
     cursor: pointer;
+    animation: idleSpin 120s infinite linear;
 }
 
 .icosahedron:hover .d20Side{
     opacity: 50%;
+}
+
+.icosahedron:hover .dieNumberText {
+    visibility: hidden;
 }
 
 .icosahedronContainer {
@@ -28,24 +33,20 @@
     transform: rotateX(-10deg);
 }
 
-.spinIdle {
-    animation: roll 120s infinite linear;
-}
-
 .d20Side {
     position: absolute;
     left: 0;
     bottom: 50%;
-    opacity: 40%;
+    opacity: 50%;
     border-bottom: 174px solid skyblue;
     border-left: 100px solid transparent;
     border-right: 100px solid transparent;
     transform-origin: 50% 0%;
 }
 
-@keyframes roll {
+@keyframes idleSpin {
     0% {
-        transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+        transform: rotateX(-10deg) rotateY(0deg) rotateZ(0deg);
     }
     100% {
         transform: rotateX(360deg) rotateY(720deg) rotateZ(1080deg);
@@ -124,4 +125,6 @@
     color: black;   
     font-weight: bold;
     font-size: 75px;
+    user-select: none;
+    pointer-events: none;
 }
