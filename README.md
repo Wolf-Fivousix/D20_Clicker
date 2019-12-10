@@ -17,10 +17,8 @@ As other idle games, gameplay is very straight forward: Click on the big dice an
 3) Die spinning effect.
 
 ## To-dos/future features.
-* Upgrades/Boosters, a.k.a. Store.
-* **Icons.**
 * Finish Styling.
-* Update tab title with curent currency value.
+* Upgrades/Boosters, a.k.a. Store.
 * Ascend Mechanic.
 * Achievements.
 * Screen Fill Effect.
