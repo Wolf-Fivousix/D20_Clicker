@@ -2,6 +2,19 @@ const SAVE = loadGame();
 const game = SAVE ? new Game(...SAVE) : new Game();
 
 function D20Clicker() {
+    const die = document.getElementById("icosahedron");
+    die.animate(
+        [
+            { transform: "rotateX(0deg) rotateY(0deg) rotateZ(0deg)" },
+            { transform: "rotateX(720deg) rotateY(360deg) rotateZ(540deg)" }
+        ],
+        {
+            duration: 2000,
+            iterations: 1,
+            easing: "ease-out"
+        }
+    );
+
     let roll = Math.ceil(Math.random() * 20);
     game.changeCurrency(roll);
     if(roll < 10) roll = "0" + roll;

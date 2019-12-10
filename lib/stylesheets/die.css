@@ -7,6 +7,10 @@
     cursor: pointer;
 }
 
+.icosahedron:hover .d20Side{
+    opacity: 50%;
+}
+
 .icosahedronContainer {
     height: 400px;
     width: 400px;
@@ -20,19 +24,31 @@
     position: relative;
     width: 200px;
     height: 200px;
-    animation: roll 60s infinite linear;
     transform-style: preserve-3d;
+}
+
+.spinIdle {
+    animation: roll 120s infinite linear;
 }
 
 .d20Side {
     position: absolute;
     left: 0;
     bottom: 50%;
-    opacity: 50%;
+    opacity: 40%;
     border-bottom: 174px solid skyblue;
     border-left: 100px solid transparent;
     border-right: 100px solid transparent;
     transform-origin: 50% 0%;
+}
+
+@keyframes roll {
+    0% {
+        transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+    }
+    100% {
+        transform: rotateX(360deg) rotateY(720deg) rotateZ(1080deg);
+    }
 }
 
 .d20Side:nth-child(1) {
@@ -96,15 +112,6 @@
     transform: translateY(256.7px) rotateY(1440deg) rotateZ(180deg) translateZ(170.1px) rotateX(-10.81deg);
 }
 
-@keyframes roll {
-    0% {
-        transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
-    }
-    100% {
-        transform: rotateX(360deg) rotateY(720deg) rotateZ(1080deg);
-    }
-}
-
 .dieNumberDisplay {
     position: relative;
 }
@@ -112,7 +119,7 @@
 .dieNumberText {
     position: absolute;
     left: -136px;
-    top: -48px;
+    top: -44px;
     color: black;   
     font-weight: bold;
     font-size: 75px;
