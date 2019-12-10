@@ -1,233 +1,119 @@
-#D20 {
-    border-radius: 60px;
-    text-align: center;
-    padding: 100px;
-    margin: 40px;
-    background-image: url("../../assets/d20TransparentTry.png");
-    background-repeat: no-repeat;
-    background-size: contain;
-    color: black;
-    font-size: 45px;
-    font-weight: 600;
+.icosahedron:active .d20Side{
+    border-bottom-color: rgb(166, 248, 193);
+    opacity: 50%;
 }
 
-#D20:hover {
+.icosahedron:hover {
     cursor: pointer;
 }
 
-#D20:active {
-    background: gray;
-}
-
-.dieContainer {
-    perspective: 800px;
-    perspective-origin: 50% 100px;
-}
-
-.die {
-    position: relative;
-    width: 200px;
-    transform-style: preserve-3d;
-    animation: spin 4s infinite;
-}
-
-.side {
-    background: skyblue;
-    border: 4px solid gray;
-    position: absolute;
-    width: 200px;
-    height: 200px;
-    opacity: 50%;
-    text-align: center;
-    padding: 80px;
-    color: black;   
-    font-size: 30px;
-}
-
-.one {
-    transform: translateZ(100px);
-}
-
-.two {
-    transform: rotateY(270deg)
-                translateX(-100px);
-    transform-origin: center left;
-}
-
-.three {
-    transform: rotateX(90deg)
-                translateY(100px);
-	transform-origin: bottom center;
-}
-
-.four {
-    transform: rotateX(-90deg)
-                translateY(-100px);
-    transform-origin: top center;
-}
-
-.five {
-    transform: rotateY(-270deg)
-                translateX(100px);
-    transform-origin: top right;
-}
-.six {
-    transform: translateZ(-100px)
-                rotateY(180deg);
-}
-
-@keyframes spin {
-    100% {
-        transform: rotateY(360deg);
-    }
-}
-
-/* html {
-    --triangle_width: 50px;
-}
-
 .icosahedronContainer {
-    height: 300px;
+    height: 400px;
+    width: 400px;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 200px;
+    margin-bottom: 50px;
 }
+
 .icosahedron {
     position: relative;
+    width: 200px;
+    height: 200px;
+    animation: roll 60s infinite linear;
     transform-style: preserve-3d;
 }
 
-
-
 .d20Side {
-    width: var(--triangle_width);
-    border-top: var(--triangle_width) solid transparent;
-    border-left: var(--triangle_width) solid transparent;
-    border-right: var(--triangle_width) solid transparent;
-    border-bottom: var(--triangle_width) solid skyblue;
-    opacity: 50%;
-
     position: absolute;
+    left: 0;
+    bottom: 50%;
+    opacity: 50%;
+    border-bottom: 174px solid skyblue;
+    border-left: 100px solid transparent;
+    border-right: 100px solid transparent;
     transform-origin: 50% 0%;
 }
 
-.um {
-    transform: translateY(var(--triangle_width));
-}
-
-.dois {
-    transform: rotateX(180deg);
-} */
-
-.icosahedronContainer {
-    height: 300px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 200px;
-}
-
-.icosahedron {
-  position: relative;
-  width: 200px;
-  height: 200px;
-          animation: roll 16s infinite linear;
-          transform-style: preserve-3d;
-}
-.icosahedron .d20Side {
-  position: absolute;
-  left: 0;
-  bottom: 50%;
-  opacity: 50%;
-  border-bottom: 173.2px solid skyblue;
-  border-left: 100px solid transparent;
-  border-right: 100px solid transparent;
-          transform-origin: 50% 0%;
-}
-.icosahedron .d20Side:nth-child(1) {
+.d20Side:nth-child(1) {
     transform: translateY(-18.5px) rotateY(72deg) rotateX(52.62deg);
-    border-bottom-color: rgba(168, 178, 184, 0.4);
 }
-.icosahedron .d20Side:nth-child(2) {
+.d20Side:nth-child(2) {
     transform: translateY(-18.5px) rotateY(144deg) rotateX(52.62deg);
-    border-bottom-color: rgba(218, 140, 71, 0.4);
 }
-.icosahedron .d20Side:nth-child(3) {
+.d20Side:nth-child(3) {
     transform: translateY(-18.5px) rotateY(216deg) rotateX(52.62deg);
-    border-bottom-color: rgba(223, 75, 148, 0.4);
 }
-.icosahedron .d20Side:nth-child(4) {
+.d20Side:nth-child(4) {
     transform: translateY(-18.5px) rotateY(288deg) rotateX(52.62deg);
-    border-bottom-color: rgba(93, 51, 247, 0.4);
 }
-.icosahedron .d20Side:nth-child(5) {
+.d20Side:nth-child(5) {
     transform: translateY(-18.5px) rotateY(360deg) rotateX(52.62deg);
-    border-bottom-color: rgba(169, 154, 234, 0.4);
 }
-.icosahedron .d20Side:nth-child(6) {
+.d20Side:nth-child(6) {
     transform: translateY(361.8px) rotateY(468deg) rotateX(127.38deg);
-    border-bottom-color: rgba(76, 241, 3, 0.4);
 }
-.icosahedron .d20Side:nth-child(7) {
+.d20Side:nth-child(7) {
     transform: translateY(361.8px) rotateY(540deg) rotateX(127.38deg);
-    border-bottom-color: rgba(218, 160, 234, 0.4);
 }
-.icosahedron .d20Side:nth-child(8) {
+.d20Side:nth-child(8) {
     transform: translateY(361.8px) rotateY(612deg) rotateX(127.38deg);
-    border-bottom-color: rgba(33, 183, 227, 0.4);
 }
-.icosahedron .d20Side:nth-child(9) {
+.d20Side:nth-child(9) {
     transform: translateY(361.8px) rotateY(684deg) rotateX(127.38deg);
-    border-bottom-color: rgba(6, 227, 58, 0.4);
 }
-.icosahedron .d20Side:nth-child(10) {
+.d20Side:nth-child(10) {
     transform: translateY(361.8px) rotateY(756deg) rotateX(127.38deg);
-    border-bottom-color: rgba(132, 64, 217, 0.4);
 }
-.icosahedron .d20Side:nth-child(11) {
+.d20Side:nth-child(11) {
     transform: translateY(86.6px) rotateY(828deg) translateZ(170.1px) rotateX(-10.81deg);
-    border-bottom-color: rgba(150, 191, 131, 0.4);
 }
-.icosahedron .d20Side:nth-child(12) {
+.d20Side:nth-child(12) {
     transform: translateY(86.6px) rotateY(900deg) translateZ(170.1px) rotateX(-10.81deg);
-    border-bottom-color: rgba(111, 218, 184, 0.4);
 }
-.icosahedron .d20Side:nth-child(13) {
+.d20Side:nth-child(13) {
     transform: translateY(86.6px) rotateY(972deg) translateZ(170.1px) rotateX(-10.81deg);
-    border-bottom-color: rgba(149, 114, 169, 0.4);
 }
-.icosahedron .d20Side:nth-child(14) {
+.d20Side:nth-child(14) {
     transform: translateY(86.6px) rotateY(1044deg) translateZ(170.1px) rotateX(-10.81deg);
-    border-bottom-color: rgba(165, 101, 225, 0.4);
 }
-.icosahedron .d20Side:nth-child(15) {
+.d20Side:nth-child(15) {
     transform: translateY(86.6px) rotateY(1116deg) translateZ(170.1px) rotateX(-10.81deg);
-    border-bottom-color: rgba(191, 104, 52, 0.4);
 }
-.icosahedron .d20Side:nth-child(16) {
+.d20Side:nth-child(16) {
     transform: translateY(256.7px) rotateY(1152deg) rotateZ(180deg) translateZ(170.1px) rotateX(-10.81deg);
-    border-bottom-color: rgba(23, 183, 18, 0.4);
 }
-.icosahedron .d20Side:nth-child(17) {
+.d20Side:nth-child(17) {
     transform: translateY(256.7px) rotateY(1224deg) rotateZ(180deg) translateZ(170.1px) rotateX(-10.81deg);
-    border-bottom-color: rgba(209, 185, 156, 0.4);
 }
-.icosahedron .d20Side:nth-child(18) {
+.d20Side:nth-child(18) {
     transform: translateY(256.7px) rotateY(1296deg) rotateZ(180deg) translateZ(170.1px) rotateX(-10.81deg);
-    border-bottom-color: rgba(41, 25, 144, 0.4);
 }
-.icosahedron .d20Side:nth-child(19) {
+.d20Side:nth-child(19) {
     transform: translateY(256.7px) rotateY(1368deg) rotateZ(180deg) translateZ(170.1px) rotateX(-10.81deg);
-    border-bottom-color: rgba(38, 102, 211, 0.4);
 }
-.icosahedron .d20Side:nth-child(20) {
+.d20Side:nth-child(20) {
     transform: translateY(256.7px) rotateY(1440deg) rotateZ(180deg) translateZ(170.1px) rotateX(-10.81deg);
-    border-bottom-color: rgba(186, 232, 152, 0.4);
 }
 
 @keyframes roll {
-  100% {
-            transform: rotateX(360deg) rotateY(720deg) rotateZ(1080deg);
-  }
+    0% {
+        transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+    }
+    100% {
+        transform: rotateX(360deg) rotateY(720deg) rotateZ(1080deg);
+    }
+}
+
+.dieNumberDisplay {
+    position: relative;
+}
+
+.dieNumberText {
+    position: absolute;
+    left: -136px;
+    top: -48px;
+    color: black;   
+    font-weight: bold;
+    font-size: 75px;
 }
