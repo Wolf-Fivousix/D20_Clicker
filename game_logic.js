@@ -1,12 +1,14 @@
 const SAVE = loadGame();
 const game = SAVE ? new Game(...SAVE) : new Game();
+let d20DisplayTimer = setTimeout(() => document.getElementById("D20").innerHTML = "00");
 
 function D20Clicker() {
     const die = document.getElementById("icosahedron");
+    die.classList.remove("spinIdle");
     die.animate(
         [
             { transform: "rotateX(0deg) rotateY(0deg) rotateZ(0deg)" },
-            { transform: "rotateX(720deg) rotateY(360deg) rotateZ(360deg)" }
+            { transform: "rotateX(710deg) rotateY(360deg) rotateZ(360deg)" }
         ],
         {
             duration: 2000,
@@ -18,7 +20,14 @@ function D20Clicker() {
     let roll = Math.ceil(Math.random() * 20);
     game.changeCurrency(roll);
     if(roll < 10) roll = "0" + roll;
-    document.getElementById("D20").innerHTML = roll;
+
+    clearTimeout(d20DisplayTimer);
+    document.getElementById("D20").innerHTML = "";
+
+    d20DisplayTimer = setTimeout(() => {
+        document.getElementById("D20").innerHTML = roll;
+        setTimeout(() => die.classList.add("spinIdle"), 500);
+    }, 2000);
 }
 
 function levelUp(attribute) {

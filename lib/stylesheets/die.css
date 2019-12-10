@@ -5,15 +5,14 @@
 
 .icosahedron:hover {
     cursor: pointer;
+}
+
+.spinIdle:hover {
     animation: idleSpin 120s infinite linear;
 }
 
 .icosahedron:hover .d20Side{
     opacity: 50%;
-}
-
-.icosahedron:hover .dieNumberText {
-    visibility: hidden;
 }
 
 .icosahedronContainer {
