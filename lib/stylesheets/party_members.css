@@ -1,5 +1,5 @@
 :root {
-    --iconSize: 48px;
+    --iconSize: 72px;
 }
 
 .purchasePlate {
@@ -10,7 +10,6 @@
     margin: 20px;
     margin-left: 100px;
     display: flex;
-    justify-content: space-between;
     opacity: 0.6;
 }
 
@@ -19,41 +18,54 @@
     opacity: 1;
 }
 
+.purchasePlateText {
+    display: flex;
+    flex-flow: column;
+    font-size: 48px;
+    font-weight: bold;
+    color: black;
+}
+
+.nameAndLevel {
+    display: flex;
+    width: 200px;
+    justify-content: space-between;
+    user-select: none;
+}
+
 .plateLevel {
-    color: skyblue;
+    /* color: skyblue; */
 }
 
 .cost {
-    color: green;
+    font-size: 24px;
 }
 
 .purchasePlate:hover svg {
     fill: skyblue;
 }
 
-svg {
+.dieIcon,
+.warriorIcon,
+.arcanistIcon,
+.dragonIcon {
+    margin-right: 16px;
     fill: black;
     width: var(--iconSize);
     height: var(--iconSize);
     transition: 1s;
+    /* transform: scale(1.5); */
 }
 
-.dieIcon,
-.arcanistIcon,
-.dragonIcon {
-    /* width: 32px;
-    height: 32px; */
+.warriorIcon {
+    transform: scale(1.3);
 }
 
 .dragonIconContour {
     fill: white;
 }
 
-.warriorIcon {
-    width: var(--iconSize);
-    height: var(--iconSize);
-    transform: scale(1.3);
-}
+
 
 
 .stonePlate {
