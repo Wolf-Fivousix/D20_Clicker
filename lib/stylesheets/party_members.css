@@ -11,6 +11,7 @@
     margin-left: 100px;
     display: flex;
     opacity: 0.6;
+    border-radius: 10px;
 }
 
 .purchasePlate:hover {
@@ -21,7 +22,7 @@
 .purchasePlateText {
     display: flex;
     flex-flow: column;
-    font-size: 48px;
+    font-size: 38px;
     font-weight: bold;
     color: black;
 }
@@ -42,7 +43,16 @@
 }
 
 .purchasePlate:hover svg {
-    fill: skyblue;
+    fill: white;
+}
+
+.purchasePlate:hover .dragonIconContour {
+    fill: black;
+}
+
+.dragonIconContour {
+    fill: white;
+    transition: 0.1s;
 }
 
 .dieIcon,
@@ -54,32 +64,54 @@
     width: var(--iconSize);
     height: var(--iconSize);
     transition: 1s;
-    /* transform: scale(1.5); */
 }
 
 .warriorIcon {
     transform: scale(1.3);
 }
 
-.dragonIconContour {
-    fill: white;
+
+.diePlate {
+    background-image: url("../../assets/marble2.jpg");
+    background-size: 200%;
+    background-position: -100px 0px;
 }
 
-
-
-
-.stonePlate {
-    background: gray;
+.diePlate:hover {
+    animation: marbleRoll 6s infinite linear;
 }
 
-.marblePlate {
-    background-image: url("../../assets/marble.jpg");
-    background-size: 100%;
-    background-position: 0px 100px;
+@keyframes marbleRoll {
+    0% {
+        background-position: -100px 0px;
+    }
+    100% {
+        background-position: -100px -300px;
+    }
+}
+
+.warriorPlate {
+    background: linear-gradient(90deg, #632400, #ffbe73, #ff8d23, #632400);
+    background: linear-gradient(90deg, #005300, #5f941b, #019468, #005300);
+    background: linear-gradient(90deg, #029751, #01a88c, #12832a, #029751);
+    background-size: 400%;
+}
+
+.warriorPlate:hover {
+    animation: gradientRoll 8s infinite linear;
+}
+
+.arcanistPlate {
+    background: linear-gradient(90deg, #00568f, #4e0097, #9c2400, #5e3800, #00568f);
+    background: linear-gradient(90deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
+    background-size: 400%;
+}
+
+.arcanistPlate:hover {
+    animation: gradientRoll 8s infinite linear;
 }
 
 .firePlate {
-    /* background: linear-gradient(90deg, #ff0000, #e65a09, #ffbe32, #ff0000); */
     background-size: 133%;
     background-position: -2px 98px;
     background-image: url("../../assets/firePlate1.jpg");
@@ -102,14 +134,13 @@
 .rainbowPlate {
     background: linear-gradient(90deg, #03a9f4, #f441a5, #ffeb3b, #03a0f4);
     background-size: 400%;
-    border-radius: 10px;
 }
 
 .rainbowPlate:hover {
-    animation: rainbow 8s infinite linear;
+    animation: gradientRoll 8s infinite linear;
 }
 
-@keyframes rainbow {
+@keyframes gradientRoll {
     0% {
         background-position: 0%;
     }
