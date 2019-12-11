@@ -3,6 +3,23 @@ const game = SAVE ? new Game(...SAVE) : new Game();
 let d20DisplayTimer = setTimeout(() => document.getElementById("D20").innerHTML = "00");
 
 function D20Clicker() {
+    let roll = Math.ceil(Math.random() * 20);  
+    
+    // Floating Numbers.
+    const miniDie = document.createElement("p");
+    const rollText = document.createTextNode("+" + roll);
+    miniDie.appendChild(rollText);
+    miniDie.classList.add("floatingRoll");
+    miniDie.style.top = event.clientY + "px";
+    miniDie.style.left = event.clientX + "px";
+    document.getElementById("root").appendChild(miniDie);
+    setTimeout(() => document.getElementById("root").removeChild(miniDie), 1500);
+
+    game.changeCurrency(roll);
+    if (roll < 10) roll = "0" + roll;
+    document.getElementById("D20").innerHTML = "";
+
+    // Animation handling.
     const die = document.getElementById("icosahedron");
     die.classList.remove("spinIdle");
     die.animate(
@@ -15,14 +32,8 @@ function D20Clicker() {
             iterations: 1,
             easing: "ease-out"
         }
-    );
-
-    let roll = Math.ceil(Math.random() * 20);
-    game.changeCurrency(roll);
-    if(roll < 10) roll = "0" + roll;
-
+    );    
     clearTimeout(d20DisplayTimer);
-    document.getElementById("D20").innerHTML = "";
 
     d20DisplayTimer = setTimeout(() => {
         document.getElementById("D20").innerHTML = roll;
