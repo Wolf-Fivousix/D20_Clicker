@@ -19,6 +19,14 @@
     opacity: 1;
 }
 
+.purchasePlate:active {
+    transform: translateY(2px);
+}
+
+.purchasePlate:active svg {
+    transform: scale(1.2);
+}
+
 .purchasePlateText {
     display: flex;
     flex-flow: column;
@@ -67,7 +75,9 @@
 }
 
 .warriorIcon {
-    transform: scale(1.3);
+    /* transform: scale(1.3) */
+    width: calc(var(--iconSize) * 1.3);
+    width: calc(var(--iconSize) * 1.3);
 }
 
 

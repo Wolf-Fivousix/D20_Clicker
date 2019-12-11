@@ -15,6 +15,7 @@ As other idle games, gameplay is very straight forward: Click on the big dice an
 2) Inactive tab's breaking the "setInterval" game loop. Modified to use time difference between updates.
 * Convert into a GameLoop with a Rendering and Logic methods.
 3) Die spinning effect.
+4) Manipulating the DOM for temporary elements that die after a set time.
 
 ## To-dos/future features.
 * Finish Styling.
