@@ -144,5 +144,6 @@
 @keyframes flyUp {
     100% {
         top: 100px;
+        opacity: -0.1;
     }
 }
