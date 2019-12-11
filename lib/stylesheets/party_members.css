@@ -106,16 +106,24 @@
     background: linear-gradient(90deg, #632400, #ffbe73, #ff8d23, #632400);
     background: linear-gradient(90deg, #005300, #5f941b, #019468, #005300);
     background: linear-gradient(90deg, #029751, #01a88c, #12832a, #029751);
-    background-size: 400%;
+    background-image: url("../../assets/citrine.jpg");
+    background-size: 100%;
+    background-position: 0px -25px;
 }
 
 .warriorPlate:hover {
-    animation: gradientRoll 8s infinite linear;
+    animation: citrineRoll 8s infinite linear;
+}
+
+@keyframes citrineRoll {
+    100% {
+        background-position: 300px -25px;
+    }
 }
 
 .arcanistPlate {
     background: linear-gradient(90deg, #00568f, #4e0097, #9c2400, #5e3800, #00568f);
-    background: linear-gradient(90deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
+    background: linear-gradient(90deg, #03a9f4, #f44141, #b4ff3b, #03a9f4);
     background-size: 400%;
 }
 
