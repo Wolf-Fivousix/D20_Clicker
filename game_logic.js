@@ -98,7 +98,7 @@ document.addEventListener("DOMContentLoaded", () => {
         game.changeCurrency(dragonTick);
         const generation = (warriorTick + arcanistTick + dragonTick) * 10;
         document.getElementById("currencyPerSecond").innerHTML = formatNumber(generation) + " / second";
-    }, 100);
+    }, game.fps);
 
     
     setInterval(() => {
