@@ -5,12 +5,18 @@
 * HTML5
 * CSS
 
+![D20 Screen Shot](assets/D20_ScreenShot.jpeg?raw=true)
+
 ## Table of Contents
+Technologies
+Instructions
+Techical Implementation Details
+Future Features
 
 ## Instructions:
 As other idle games, gameplay is very straight forward: Click on the big dice and see those points rolling. Repeat until you can buy an upgrade.
 
-## Technical implementation details
+## Technical Implementation Details
 ### 20 Sided Die
 In order to make the die only using HTML and CSS the trick was using 0 sized elements with transparent borders. That gives us a triangle that can be translated and rotated in position to achieve the 3D effect.
 
@@ -94,7 +100,7 @@ The animation itself was another big challenge. Not just to get the spin timing 
 ```
 
 
-## To-dos/future features.
+## Future Features.
 * Add icons and links to profiles.
 * Die background effect for drawing attention.
 * Add Status/Attributes like total points, clicks, points generated passively, time played, etc.
