@@ -14,6 +14,58 @@ As other idle games, gameplay is very straight forward: Click on the big dice an
 1) Saving/Loading the game through Storage.
 2) Die and spinning effect.
 - In order to make the die only using HTML and CSS the trick was using 0 sized elements with transparent borders. That gives us a triangle that can be translated and rotated in position to achieve the 3D effect.
+```HTML
+<figure class="icosahedronContainer">
+                <div id="icosahedron"
+                class="icosahedron spinIdle"
+                onClick="D20Clicker()"
+                >
+
+                    <div class="d20Side"></div>
+                    <div class="d20Side"></div>
+                    <div class="d20Side"></div>
+                    <div class="d20Side"></div>
+                    <div class="d20Side"></div>
+                
+                    <div class="d20Side"></div>
+                    <div class="d20Side"></div>
+                    <div class="d20Side"></div>
+                    <div class="d20Side"></div>
+                    <div class="d20Side"></div>
+                
+                    <div class="d20Side"></div>
+                    <div class="d20Side"></div>
+                    <div class="d20Side"></div>
+                    <div class="d20Side"></div>
+                    <div class="d20Side"></div>
+                
+                    <div class="d20Side"></div>
+                    <div class="d20Side"></div>
+                    <div class="d20Side"></div>
+                    <div class="d20Side"></div>
+                    <div class="d20Side"></div>
+                </div>
+                <div class="dieNumberDisplay">
+                    <div id="D20" class="dieNumberText"></div>
+                </div>
+            </figure>
+```
+
+```CSS
+.d20Side:nth-child(1) {
+    transform: translateY(-18.5px) rotateY(72deg) rotateX(52.62deg);
+}
+.d20Side:nth-child(6) {
+    transform: translateY(361.8px) rotateY(468deg) rotateX(127.38deg);
+}
+.d20Side:nth-child(11) {
+    transform: translateY(86.6px) rotateY(828deg) translateZ(170.1px) rotateX(-10.81deg);
+}
+.d20Side:nth-child(20) {
+    transform: translateY(256.7px) rotateY(1440deg) rotateZ(180deg) translateZ(170.1px) rotateX(-10.81deg);
+}
+```
+
 - The animation itself was another big challenge. Not just to get the spin timing correct, but also to layer the multiple animations. I achieved that by inserting the spin animation and removing the idle class on the click event. More secretly though, the moment the idle animation returns is critical, and to achieve that seemless feeling I saved the timeOut to a local variable that get's erased anytime a new click occurs. Thus ensuring that the idle animation does not overlap with the spin animation.
 
 ```JavaScript
