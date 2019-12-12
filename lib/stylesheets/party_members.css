@@ -103,12 +103,9 @@
 }
 
 .warriorPlate {
-    background: linear-gradient(90deg, #632400, #ffbe73, #ff8d23, #632400);
-    background: linear-gradient(90deg, #005300, #5f941b, #019468, #005300);
-    background: linear-gradient(90deg, #029751, #01a88c, #12832a, #029751);
-    background-image: url("../../assets/citrine.jpg");
+    background-image: url("../../assets/WarriorCitrine.jpg");
     background-size: 100%;
-    background-position: 0px -25px;
+    background-position: 0px -100px;
 }
 
 .warriorPlate:hover {
@@ -117,7 +114,7 @@
 
 @keyframes citrineRoll {
     100% {
-        background-position: 300px -25px;
+        background-position: 0px 190px;
     }
 }
 
