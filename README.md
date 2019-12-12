@@ -12,7 +12,10 @@ As other idle games, gameplay is very straight forward: Click on the big dice an
 
 ## Technical implementation details with code snippets (make sure it looks good).
 1) Saving/Loading the game through Storage.
-2) Die spinning effect.
+2) Die and spinning effect.
+- In order to make the die only using HTML and CSS the trick was using 0 sized elements with transparent borders. That gives us a triangle that can be translated and rotated in position to achieve the 3D effect.
+- The animation itself was another big challenge. Not just to get the spin timing correct, but also to layer the multiple animations. I achieved that by inserting the spin animation and removing the idle class on the click event. More secretly though, the moment the idle animation returns is critical, and to achieve that seemless feeling I saved the timeOut to a local variable that get's erased anytime a new click occurs. Thus ensuring that the idle animation does not overlap with the spin animation.
+
 3) Manipulating the DOM for temporary elements that die after a set time.
 
 ## To-dos/future features.
