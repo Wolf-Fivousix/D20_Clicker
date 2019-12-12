@@ -16,6 +16,30 @@ As other idle games, gameplay is very straight forward: Click on the big dice an
 - In order to make the die only using HTML and CSS the trick was using 0 sized elements with transparent borders. That gives us a triangle that can be translated and rotated in position to achieve the 3D effect.
 - The animation itself was another big challenge. Not just to get the spin timing correct, but also to layer the multiple animations. I achieved that by inserting the spin animation and removing the idle class on the click event. More secretly though, the moment the idle animation returns is critical, and to achieve that seemless feeling I saved the timeOut to a local variable that get's erased anytime a new click occurs. Thus ensuring that the idle animation does not overlap with the spin animation.
 
+```JavaScript
+// Animation handling.
+    const die = document.getElementById("icosahedron");
+    die.classList.remove("spinIdle");
+    die.animate(
+        [
+            { transform: "rotateX(0deg) rotateY(0deg) rotateZ(0deg)" },
+            { transform: "rotateX(710deg) rotateY(360deg) rotateZ(360deg)" }
+        ],
+        {
+            duration: 2000,
+            iterations: 1,
+            easing: "ease-out"
+        }
+    );    
+    clearTimeout(d20DisplayTimer);
+
+    d20DisplayTimer = setTimeout(() => {
+        document.getElementById("D20").innerHTML = roll;
+        die.classList.add("spinIdle");
+    }, 2000);
+```
+
+
 3) Manipulating the DOM for temporary elements that die after a set time.
 
 ## To-dos/future features.
