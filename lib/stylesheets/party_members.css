@@ -52,6 +52,7 @@
 
 .cost {
     font-size: 24px;
+    user-select: none;
 }
 
 .purchasePlate:active svg {
