@@ -128,26 +128,26 @@
 }
 
 .arcanistPlate:hover {
-    animation: gradientRoll 8s infinite linear;
+    animation: gradientRoll 2s infinite linear;
 }
 
 .firePlate {
-    background-size: 133%;
-    background-position: -2px 98px;
-    background-image: url("../../assets/firePlate1.jpg");
+    background-size: 141%;
+    background-position: 0px 93px;
+    background-image: url("../../assets/DragonFireTile.png");
 }
 
 .firePlate:hover {
-    animation: backgroundRoll 2s infinite linear;
+    animation: backgroundRoll 10s infinite linear;
 }
 
 @keyframes backgroundRoll {
     0% {
-        background-position: -2px 98px;
+        background-position: 0px 93px;
     }
 
     100% {
-        background-position: -298px 98px;
+        background-position: -418px 93px;
     }
 }
 
