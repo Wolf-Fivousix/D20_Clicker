@@ -169,3 +169,7 @@
         background-position: 400%;
     }
 }
+
+.notEnoughFunds {
+    opacity: 0.2;
+}

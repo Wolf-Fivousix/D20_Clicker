@@ -5,11 +5,11 @@ class Game {
                 arcanist = 0,
                 dragon = 0 )
     {
-        this.fps = Math.floor(1000/10);
+        this.fps = Math.floor(1000/30);
         this.currency = currency;
-        this.die = new PartyMember(die, 1, 1.05);
-        this.warrior = new PartyMember(warrior, 10, 1.15);
-        this.arcanist = new PartyMember(arcanist, 76, 1.25);
+        this.die = new PartyMember(die, 10, 1.1);
+        this.warrior = new PartyMember(warrior, 50, 1.15);
+        this.arcanist = new PartyMember(arcanist, 150, 1.25);
         this.dragon = new PartyMember(dragon, 300, 1.5);
     }
 
@@ -19,7 +19,6 @@ class Game {
         return this.currency;
     }
 
-
     saveObject() {
         return [
                 this.currency,
@@ -28,5 +27,17 @@ class Game {
                 this.arcanist.level,
                 this.dragon.level
             ];
+    }
+
+    updateCostColors() {
+        const party = ["die", "warrior", "arcanist", "dragon"];
+        party.forEach(member => {
+            if (this.currency > this[member].cost) {
+                document.getElementById(member + "Cost").classList.remove("notEnoughFunds");
+            }
+            else {
+                document.getElementById(member + "Cost").classList.add("notEnoughFunds");
+            }
+        });
     }
 };

@@ -16,8 +16,10 @@ As other idle games, gameplay is very straight forward: Click on the big dice an
 3) Manipulating the DOM for temporary elements that die after a set time.
 
 ## To-dos/future features.
+* Add banner details on plate hover.
 * Upgrades/Boosters, a.k.a. Store.
 * Ascend Mechanic.
 * Achievements.
 * Screen Fill Effect.
+* Add option to show die bonuses on click.
 * Enable game to compensate tab out of focus.

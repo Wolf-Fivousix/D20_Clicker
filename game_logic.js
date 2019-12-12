@@ -15,7 +15,7 @@ function D20Clicker() {
     document.getElementById("root").appendChild(miniDie);
     setTimeout(() => document.getElementById("root").removeChild(miniDie), 1500);
 
-    game.changeCurrency(roll);
+    game.changeCurrency(roll + game.die.level);
     if (roll < 10) roll = "0" + roll;
     document.getElementById("D20").innerHTML = "";
 
@@ -46,8 +46,9 @@ function levelUp(attribute) {
         game.changeCurrency(-game[attribute].cost);
         game[attribute].levelUp();
         document.getElementById(attribute + "Level").innerHTML = game[attribute].level;
-        document.getElementById(attribute + "Cost").innerHTML = game[attribute].cost;
+        document.getElementById(attribute + "Cost").innerHTML = formatNumber(game[attribute].cost);
     }
+    console.log(formatNumber(game[attribute].cost));
 }
 
 function saveGame() {
@@ -81,23 +82,25 @@ document.addEventListener("DOMContentLoaded", () => {
     // Initialize HTML with Game State.
     document.getElementById("currencyCounter").innerHTML = game.currency;
     document.getElementById("dieLevel").innerHTML = game.die.level;
-    document.getElementById("dieCost").innerHTML = game.die.cost;
+    document.getElementById("dieCost").innerHTML = formatNumber(game.die.cost);
     document.getElementById("warriorLevel").innerHTML = game.warrior.level;
-    document.getElementById("warriorCost").innerHTML = game.warrior.cost;
+    document.getElementById("warriorCost").innerHTML = formatNumber(game.warrior.cost);
     document.getElementById("arcanistLevel").innerHTML = game.arcanist.level;
-    document.getElementById("arcanistCost").innerHTML = game.arcanist.cost;
+    document.getElementById("arcanistCost").innerHTML = formatNumber(game.arcanist.cost);
     document.getElementById("dragonLevel").innerHTML = game.dragon.level;
-    document.getElementById("dragonCost").innerHTML = game.dragon.cost;
+    document.getElementById("dragonCost").innerHTML = formatNumber(game.dragon.cost);
         
     setInterval(() => {
-        const warriorTick = game.warrior.level / 10;
-        const arcanistTick = game.arcanist.level / 2;
-        const dragonTick = game.dragon.level * 4;
+        const warriorTick = game.warrior.level / 30;
+        const arcanistTick = game.arcanist.level / 6;
+        const dragonTick = game.dragon.level;
         game.changeCurrency(warriorTick);
         game.changeCurrency(arcanistTick);
         game.changeCurrency(dragonTick);
-        const generation = (warriorTick + arcanistTick + dragonTick) * 10;
+        const generation = Math.floor((warriorTick + arcanistTick + dragonTick) * game.fps);
         document.getElementById("currencyPerSecond").innerHTML = formatNumber(generation) + " / second";
+
+        game.updateCostColors();
     }, game.fps);
 
     
