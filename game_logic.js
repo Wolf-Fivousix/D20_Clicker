@@ -48,7 +48,6 @@ function levelUp(attribute) {
         document.getElementById(attribute + "Level").innerHTML = game[attribute].level;
         document.getElementById(attribute + "Cost").innerHTML = formatNumber(game[attribute].cost);
     }
-    console.log(formatNumber(game[attribute].cost));
 }
 
 function saveGame() {
@@ -91,9 +90,9 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("dragonCost").innerHTML = formatNumber(game.dragon.cost);
         
     setInterval(() => {
-        const warriorTick = game.warrior.level / 30;
-        const arcanistTick = game.arcanist.level / 6;
-        const dragonTick = game.dragon.level;
+        const warriorTick = game.warrior.level / game.fps;
+        const arcanistTick = game.arcanist.level * 10 / game.fps;
+        const dragonTick = game.dragon.level * 100 / game.fps;
         game.changeCurrency(warriorTick);
         game.changeCurrency(arcanistTick);
         game.changeCurrency(dragonTick);

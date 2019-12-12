@@ -8,9 +8,9 @@ class Game {
         this.fps = Math.floor(1000/30);
         this.currency = currency;
         this.die = new PartyMember(die, 10, 1.1);
-        this.warrior = new PartyMember(warrior, 50, 1.15);
-        this.arcanist = new PartyMember(arcanist, 150, 1.25);
-        this.dragon = new PartyMember(dragon, 300, 1.5);
+        this.warrior = new PartyMember(warrior, 200, 1.05);
+        this.arcanist = new PartyMember(arcanist, 1300, 1.15);
+        this.dragon = new PartyMember(dragon, 6666, 1.5);
     }
 
     changeCurrency(increment) {
