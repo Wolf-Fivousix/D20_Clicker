@@ -84,9 +84,9 @@
 
 
 .diePlate {
-    background-image: url("../../assets/marble2.jpg");
-    background-size: 200%;
-    background-position: -100px 0px;
+    background-image: url("../../assets/DieMarble.jpg");
+    background-size: 175%;
+    background-position: 0px 0px;
 }
 
 .diePlate:hover {
@@ -95,10 +95,10 @@
 
 @keyframes marbleRoll {
     0% {
-        background-position: -100px 0px;
+        background-position: 0px 0px;
     }
     100% {
-        background-position: -100px -300px;
+        background-position: 0px -600px;
     }
 }
 
@@ -147,7 +147,7 @@
     }
 
     100% {
-        background-position: -418px 93px;
+        background-position: 418px 93px;
     }
 }
 
