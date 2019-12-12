@@ -5,7 +5,7 @@
 * HTML5
 * CSS
 
-![D20 Screen Shot](assets/D20_ScreenShot.jpeg?raw=true)
+![D20 Screen Shot](assets/D20_ScreenShot.png?raw=true "D20 Screen Shot")
 
 ## Table of Contents
 Technologies
