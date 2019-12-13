@@ -7,7 +7,7 @@ function D20Clicker() {
     
     // Floating Numbers.
     const miniDie = document.createElement("p");
-    const rollText = document.createTextNode("+" + roll);
+    const rollText = document.createTextNode("+" + (roll + game.die.level));
     miniDie.appendChild(rollText);
     miniDie.classList.add("floatingRoll");
     miniDie.style.top = event.clientY + "px";
