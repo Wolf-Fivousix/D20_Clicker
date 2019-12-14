@@ -62,3 +62,9 @@
 .loadButton:hover {
     background: #611b00;
 }
+
+.onlineProfileIcon {
+    width: 24px;
+    fill: white;
+    opacity: 0.5;
+}
