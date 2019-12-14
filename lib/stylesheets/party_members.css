@@ -126,7 +126,7 @@
 }
 
 .arcanistPlate:hover {
-    animation: gradientRoll 2s infinite linear;
+    animation: gradientRoll 8s infinite linear;
 }
 
 .firePlate {
