@@ -1,4 +1,4 @@
-# [D20 Clicker Live](https://d20-clicker.herokuapp.com/)
+# [D20 Clicker Live](https://wolf-fivousix.github.io/D20_Clicker/)
 
 ## Technologies:
 * JavaScript
