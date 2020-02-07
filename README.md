@@ -1,25 +1,82 @@
 # [D20 Clicker Live](https://wolf-fivousix.github.io/D20_Clicker/)
+![D20 Screen Shot](assets/D20_ScreenShot.png?raw=true "D20 Screen Shot")
+As other idle games, gameplay is very straight forward: Click on the big dice and see those points rolling. Repeat until you can buy an upgrade.
+
+## Table of Contents
+Technologies
+Code Snipets
+Future Features
 
 ## Technologies:
 * JavaScript
 * HTML5
-* CSS
+* CSS3
 
-![D20 Screen Shot](assets/D20_ScreenShot.png?raw=true "D20 Screen Shot")
+## Code Snipets
+### Game saving with inheritance
+If a save file is found, the contents are transfered as arguments to the Game object using the spread operator. Otherwise, a default constructor is invoked setting the game state to initial.
+```JavaScript
+// game_logic.js
+const SAVE = loadGame();
+const game = SAVE ? new Game(...SAVE) : new Game();
 
-## Table of Contents
-Technologies
-Instructions
-Techical Implementation Details
-Future Features
+function loadGame() {
+    let save = localStorage.getItem("d20Save");
+    if (save) {
+        save = save.split(",").map(x => parseInt(x));
+        return save;
+    }
+    return null;
+}
+```
+In order to maintain a DRY codebase, I encapsulated the shared logic between all components. Most behaviors are similar, with different variables governing their power/function. Specific differences are achieved by custom methods, like the Die increased click functionality.
+```JavaScript
+// Game.js
+class Game {
+    constructor(currency = 0,
+                die = 0,
+                warrior = 0,
+                arcanist = 0,
+                dragon = 0 )
+    {
+        this.fps = Math.floor(1000/30);
+        this.currency = currency;
+        this.die = new PartyMember(die, 10, 1.1);
+        this.warrior = new PartyMember(warrior, 200, 1.05);
+        this.arcanist = new PartyMember(arcanist, 1300, 1.15);
+        this.dragon = new PartyMember(dragon, 6666, 1.5);
+    }
+};
+```
 
-## Instructions:
-As other idle games, gameplay is very straight forward: Click on the big dice and see those points rolling. Repeat until you can buy an upgrade.
+### Die animation layering
 
-## Technical Implementation Details
+The animation itself was another big challenge. Not just to get the spin timing correct, but also to layer the multiple animations. I achieved that by inserting the spin animation and removing the idle class on the click event. More secretly though, the moment the idle animation returns is critical, and to achieve that seemless feeling I saved the timeOut to a local variable that get's erased anytime a new click occurs. Thus ensuring that the idle animation does not overlap with the spin animation.
+```JavaScript
+// Animation handling.
+    const die = document.getElementById("icosahedron");
+    die.classList.remove("spinIdle");
+    die.animate(
+        [
+            { transform: "rotateX(0deg) rotateY(0deg) rotateZ(0deg)" },
+            { transform: "rotateX(710deg) rotateY(360deg) rotateZ(360deg)" }
+        ],
+        {
+            duration: 2000,
+            iterations: 1,
+            easing: "ease-out"
+        }
+    );    
+    clearTimeout(d20DisplayTimer);
+
+    d20DisplayTimer = setTimeout(() => {
+        document.getElementById("D20").innerHTML = roll;
+        die.classList.add("spinIdle");
+    }, 2000);
+```
 ### 20 Sided Die
-In order to make the die only using HTML and CSS the trick was using 0 sized elements with transparent borders. That gives us a triangle that can be translated and rotated in position to achieve the 3D effect.
 
+In order to make the die only using HTML and CSS the trick was to use 0 sized elements with transparent borders. That gives us a triangle that can be translated and rotated in position to achieve the 3D effect.
 ```HTML
 <figure class="icosahedronContainer">
     <div id="icosahedron"
@@ -56,7 +113,6 @@ In order to make the die only using HTML and CSS the trick was using 0 sized ele
     </div>
 </figure>
 ```
-
 ```CSS
 .d20Side:nth-child(1) {
     transform: translateY(-18.5px) rotateY(72deg) rotateX(52.62deg);
@@ -70,71 +126,6 @@ In order to make the die only using HTML and CSS the trick was using 0 sized ele
 .d20Side:nth-child(20) {
     transform: translateY(256.7px) rotateY(1440deg) rotateZ(180deg) translateZ(170.1px) rotateX(-10.81deg);
 }
-```
-
-
-### Die animation layering
-The animation itself was another big challenge. Not just to get the spin timing correct, but also to layer the multiple animations. I achieved that by inserting the spin animation and removing the idle class on the click event. More secretly though, the moment the idle animation returns is critical, and to achieve that seemless feeling I saved the timeOut to a local variable that get's erased anytime a new click occurs. Thus ensuring that the idle animation does not overlap with the spin animation.
-
-```JavaScript
-// Animation handling.
-    const die = document.getElementById("icosahedron");
-    die.classList.remove("spinIdle");
-    die.animate(
-        [
-            { transform: "rotateX(0deg) rotateY(0deg) rotateZ(0deg)" },
-            { transform: "rotateX(710deg) rotateY(360deg) rotateZ(360deg)" }
-        ],
-        {
-            duration: 2000,
-            iterations: 1,
-            easing: "ease-out"
-        }
-    );    
-    clearTimeout(d20DisplayTimer);
-
-    d20DisplayTimer = setTimeout(() => {
-        document.getElementById("D20").innerHTML = roll;
-        die.classList.add("spinIdle");
-    }, 2000);
-```
-
-### Game saving with inheritance
-
-If a save file is found, the contents are transfered as arguments to the Game object using the spread operator. Otherwise, a default constructor is invoked setting the game state to initial.
-```JavaScript
-// game_logic.js
-const SAVE = loadGame();
-const game = SAVE ? new Game(...SAVE) : new Game();
-
-function loadGame() {
-    let save = localStorage.getItem("d20Save");
-    if (save) {
-        save = save.split(",").map(x => parseInt(x));
-        return save;
-    }
-    return null;
-}
-```
-
-In order to maintain a DRY codebase, I encapsulated the shared logic between all components. Most behaviors are similar, with different variables governing their power/function. Specific differences are achieved by custom methods, like the Die increased click functionality.
-```JavaScript
-// Game.js
-class Game {
-    constructor(currency = 0,
-                die = 0,
-                warrior = 0,
-                arcanist = 0,
-                dragon = 0 )
-    {
-        this.fps = Math.floor(1000/30);
-        this.currency = currency;
-        this.die = new PartyMember(die, 10, 1.1);
-        this.warrior = new PartyMember(warrior, 200, 1.05);
-        this.arcanist = new PartyMember(arcanist, 1300, 1.15);
-        this.dragon = new PartyMember(dragon, 6666, 1.5);
-    }
-};
 ```
 
 ## Future Features.
