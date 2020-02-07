@@ -3,14 +3,14 @@
 D20 Clicker is a full JavaScript, HTML5 and CSS3 application. No extra libraries were used. As other idle games, gameplay is very straight forward: Click on the big die and see those points rolling. Repeat until you can buy an upgrade. Until infinity. If you can.
 
 ## Table of Contents
-Technologies
-Code Snipets
-Future Features
+* [Technologies](#technologies)
+* [Code Snipets](#code-snipets)
+* [Future Features](#future-features)
 
 ## Technologies:
-* JavaScript
-* HTML5
-* CSS3
+* **JavaScript -** All the juicy programming stuff that happens in the shadows.
+* **HTML5 -** The content you actually see in the page.
+* **CSS3 -** Makes the internet look pretty.
 
 ## Code Snipets
 ### Game saving with inheritance
