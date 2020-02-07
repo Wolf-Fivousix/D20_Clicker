@@ -1,5 +1,5 @@
 # [D20 Clicker Live](https://wolf-fivousix.github.io/D20_Clicker/)
-![D20 Screen Shot](assets/D20_ScreenShot.png?raw=true "D20 Screen Shot")
+![D20 Screen Shot](assets/d20Clicker.gif?raw=true "D20 Screen Shot")
 D20 Clicker is a full JavaScript, HTML5 and CSS3 application. No extra libraries were used. As other idle games, gameplay is very straight forward: Click on the big die and see those points rolling. Repeat until you can buy an upgrade. Until infinity. If you can.
 
 ## Table of Contents
@@ -14,9 +14,10 @@ Future Features
 
 ## Code Snipets
 ### Game saving with inheritance
+![Save Deletion Gif](assets/saveDeletion.gif?raw=true "Save Deletion Gif")
 If a save file is found, the contents are transfered as arguments to the Game object using the spread operator. Otherwise, a default constructor is invoked setting the game state to initial.
 ```JavaScript
-// game_logic.js
+// /game_logic.js
 const SAVE = loadGame();
 const game = SAVE ? new Game(...SAVE) : new Game();
 
@@ -31,7 +32,7 @@ function loadGame() {
 ```
 In order to maintain a DRY codebase, I encapsulated the shared logic between all components. Most behaviors are similar, with different variables governing their power/function. Specific differences are achieved by custom methods, like the Die increased click functionality.
 ```JavaScript
-// Game.js
+// /Game.js
 class Game {
     constructor(currency = 0,
                 die = 0,
@@ -50,9 +51,11 @@ class Game {
 ```
 
 ### Die animation layering
-
+![Die Animation Layering](assets/dieAnimation.gif?raw=true "Die Animation Layering")
 The animation itself was another big challenge. Not just to get the spin timing correct, but also to layer the multiple animations. I achieved that by inserting the spin animation and removing the idle class on the click event. More secretly though, the moment the idle animation returns is critical, and to achieve that seemless feeling I saved the timeOut to a local variable that get's erased anytime a new click occurs. Thus ensuring that the idle animation does not overlap with the spin animation.
 ```JavaScript
+// /game_logic.js
+
 // Animation handling.
     const die = document.getElementById("icosahedron");
     die.classList.remove("spinIdle");
@@ -74,10 +77,10 @@ The animation itself was another big challenge. Not just to get the spin timing 
         die.classList.add("spinIdle");
     }, 2000);
 ```
-### 20 Sided Die
 
 In order to make the die only using HTML and CSS the trick was to use 0 sized elements with transparent borders. That gives us a triangle that can be translated and rotated in position to achieve the 3D effect.
 ```HTML
+<!-- /index.html -->
 <figure class="icosahedronContainer">
     <div id="icosahedron"
     class="icosahedron spinIdle"
