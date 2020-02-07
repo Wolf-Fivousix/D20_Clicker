@@ -99,6 +99,43 @@ The animation itself was another big challenge. Not just to get the spin timing 
     }, 2000);
 ```
 
+### Game saving with inheritance
+
+If a save file is found, the contents are transfered as arguments to the Game object using the spread operator. Otherwise, a default constructor is invoked setting the game state to initial.
+```JavaScript
+// game_logic.js
+const SAVE = loadGame();
+const game = SAVE ? new Game(...SAVE) : new Game();
+
+function loadGame() {
+    let save = localStorage.getItem("d20Save");
+    if (save) {
+        save = save.split(",").map(x => parseInt(x));
+        return save;
+    }
+    return null;
+}
+```
+
+In order to maintain a DRY codebase, I encapsulated the shared logic between all components. Most behaviors are similar, with different variables governing their power/function. Specific differences are achieved by custom methods, like the Die increased click functionality.
+```JavaScript
+// Game.js
+class Game {
+    constructor(currency = 0,
+                die = 0,
+                warrior = 0,
+                arcanist = 0,
+                dragon = 0 )
+    {
+        this.fps = Math.floor(1000/30);
+        this.currency = currency;
+        this.die = new PartyMember(die, 10, 1.1);
+        this.warrior = new PartyMember(warrior, 200, 1.05);
+        this.arcanist = new PartyMember(arcanist, 1300, 1.15);
+        this.dragon = new PartyMember(dragon, 6666, 1.5);
+    }
+};
+```
 
 ## Future Features.
 * Add icons and links to profiles.
