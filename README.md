@@ -1,6 +1,6 @@
 # [D20 Clicker Live](https://wolf-fivousix.github.io/D20_Clicker/)
 ![D20 Screen Shot](assets/D20_ScreenShot.png?raw=true "D20 Screen Shot")
-As other idle games, gameplay is very straight forward: Click on the big dice and see those points rolling. Repeat until you can buy an upgrade.
+D20 Clicker is a full JavaScript, HTML5 and CSS3 application. No extra libraries were used. As other idle games, gameplay is very straight forward: Click on the big die and see those points rolling. Repeat until you can buy an upgrade. Until infinity. If you can.
 
 ## Table of Contents
 Technologies
@@ -129,7 +129,6 @@ In order to make the die only using HTML and CSS the trick was to use 0 sized el
 ```
 
 ## Future Features.
-* Add icons and links to profiles.
 * Die background effect for drawing attention.
 * Add Status/Attributes like total points, clicks, points generated passively, time played, etc.
 * Screen Fill Effect.
